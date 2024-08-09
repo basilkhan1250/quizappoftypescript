@@ -9,6 +9,7 @@ function App() {
   let [quiz, setQuiz] = useState<QuestionType[]>([])
   let [currentStep, setCurrentStep] = useState(0)
   let [score, setScore] = useState(0)
+  let [showResult, setShowResult] = useState(false)
 
   useEffect(() => {
     async function fetchData() {
@@ -32,14 +33,18 @@ function App() {
     if (currentStep !== quiz.length - 1)
       setCurrentStep(++currentStep)
     else {
-      alert("Your Final Score is: " + score + " " + " Out Of: " + quiz.length)
-      setCurrentStep(0)
-      setScore(0)
+      setShowResult(true)
     }
   }
 
   if (!quiz.length)
     return <h2 className='App'>loading.....</h2>
+  if (showResult) {
+    return (<div>
+      <h3>Result</h3>
+      <p>Your Final Score is: {score} Out Of: {quiz.length}</p>
+    </div>)
+  }
 
   return (
     <div className='App'>
