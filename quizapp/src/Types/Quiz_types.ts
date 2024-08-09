@@ -1,5 +1,6 @@
 import React from "react"
 
+
 export type Quiz = {
     category: string
     correct_answer: string
@@ -8,6 +9,7 @@ export type Quiz = {
     question: string
     type: string
 }
+
 
 export type QuestionType = {
     question: string

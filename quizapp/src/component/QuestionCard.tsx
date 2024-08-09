@@ -7,7 +7,6 @@ const QuestionCard: React.FC<questionPropType> = ({ question, option, callback }
     const handleSelection = (e: any) => {
         setSelectAns(e.target.value)
     }
-
     // console.log(question, option)
     return (
         <div>
@@ -38,5 +37,4 @@ const QuestionCard: React.FC<questionPropType> = ({ question, option, callback }
         </div>
     )
 }
-
 export default QuestionCard
