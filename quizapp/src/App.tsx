@@ -16,7 +16,7 @@ function App() {
 
   const handleInput = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     if (quantity && level) {
       const questions: QuestionType[] = await getQuizDetails(quantity, level);
       setQuiz(questions);
@@ -43,38 +43,67 @@ function App() {
   }
 
   if (!quizstart) {
-    return (
-      <div>
-        <h2>Welcome To The Quiz</h2>
-        <form onSubmit={handleInput}>
-          <label htmlFor='quantity'>Enter the Quantity Of Questions:</label>
-          <input 
-            type='number' 
-            id='quantity' 
-            value={quantity} 
-            onChange={(e) => setQuantity(Number(e.target.value))} 
-          /><br />
-          
-          <label htmlFor='level'>Enter Difficulty Level Of Questions:</label>
-          <input 
-            type='text' 
-            id='level' 
-            value={level} 
-            onChange={(e) => setLevel(e.target.value)} 
-          /><br />
 
-          <button type="submit">Start The Quiz</button>
-        </form>
+    return (
+
+
+      <div className="container">
+        <div className="blur">
+          <h1 className='textcolor'>Welcome To The Quiz</h1>
+          <hr className="line"></hr>
+          <form onSubmit={handleInput}>
+            <label htmlFor='quantity' className='textcolor'>Enter the Quantity Of Questions:</label>
+            <input
+              type='number'
+              id='quantity'
+              value={quantity}
+              onChange={(e) => setQuantity(Number(e.target.value))}
+            />
+            <br />
+            <label htmlFor='level' className='textcolor'>Enter Difficulty Level Of Questions:</label>
+            <select
+              id='level'
+              value={level}
+              onChange={(e) => setLevel(e.target.value)}
+              className='custom-select'
+            >
+              <option value="">Select Difficulty Level</option>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+            <br />
+            <button className="cssbuttons-io-button">
+              Get started
+              <div className="icon">
+                <svg
+                  height="24"
+                  width="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+
+            {/* <button className="button" type="submit">Start The Quiz</button> */}
+          </form>
+        </div>
       </div>
     )
   }
 
   if (!quiz.length)
-    return <h2 className='App'>loading.....</h2>
-  
+    return <h2 className='container'>loading.....</h2>
+
   if (showResult) {
     return (
-      <div>
+      <div className='container blur'>
         <h3>Result</h3>
         <p>Your Final Score is: {score} Out Of: {quiz.length}</p>
       </div>
@@ -82,7 +111,7 @@ function App() {
   }
 
   return (
-    <div className='App'>
+    <div className='container blur'>
       <QuestionCard
         option={quiz[currentStep].option}
         question={quiz[currentStep].question}

@@ -1,3 +1,159 @@
-/* .App {
-  text-align: center;
+.container {
+  background-image: url('https://static.vecteezy.com/system/resources/previews/008/889/844/non_2x/quiz-set-in-doodle-style-illustration-icon-question-symbol-for-print-and-design-quiz-and-exam-concept-isolated-element-on-black-background-collection-of-sign-for-school-and-event-vector.jpg');
+  background-size: cover; 
+  background-position: center; 
+  padding: 40px;
+  height: 90vh;
+  width: 95vw;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+/* Card with blur and transparency */
+.blur {
+  background: transparent; 
+  backdrop-filter: blur(25px); 
+  border-radius: 15px; 
+  padding: 30px; 
+  width: 600px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+  z-index: 2; 
+}
+
+.line {
+  /* background-color: black;
+  height: 1px;
+  margin: 10px 0;  */
+}
+
+/* Button inside the card */
+/* .button {
+  margin-top: 10px;
+  height: 40px;
+  width: 150px;
+  border-radius: 50px;
+  border: 1px solid black;
+  cursor: pointer;
 } */
+
+/* Input fields inside the card */
+#quantity,
+#level {
+  margin-left: 5px;
+  margin-top: 10px;
+  height: 30px;
+  /* width: 100%; */
+  border: 1px solid #e6e2e2;
+  border-radius: 25px;
+  background-color: transparent;
+  color: white;
+  padding-left: 15px;
+}
+#quantity{
+  width: 97%;
+}
+#level{
+  width: 100%;
+}
+
+.custom-select option {
+  background-color: #e6e2e2;
+  color: black;
+  border: 1px solid black;
+}
+
+.textcolor{
+  color: #e6e2e2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* From Uiverse.io by adamgiebl */ 
+.cssbuttons-io-button {
+  margin-top: 10px;
+  background: rgb(75, 75, 75);
+  color: white;
+  font-family: inherit;
+  padding: 0.35em;
+  padding-left: 1.2em;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 0.9em;
+  border: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 1.6em -0.6em #111111;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  padding-right: 3.3em;
+  cursor: pointer;
+}
+
+.cssbuttons-io-button .icon {
+
+  background: white;
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 0.7em;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em #444343;
+  right: 0.3em;
+  transition: all 0.3s;
+}
+
+.cssbuttons-io-button:hover .icon {
+  width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-button .icon svg {
+  width: 1.1em;
+  transition: transform 0.3s;
+  color: #000000;
+}
+
+.cssbuttons-io-button:hover .icon svg {
+  transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button:active .icon {
+  transform: scale(0.95);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
