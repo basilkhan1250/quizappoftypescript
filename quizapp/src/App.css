@@ -1,24 +1,28 @@
 .container {
   background-image: url('https://static.vecteezy.com/system/resources/previews/008/889/844/non_2x/quiz-set-in-doodle-style-illustration-icon-question-symbol-for-print-and-design-quiz-and-exam-concept-isolated-element-on-black-background-collection-of-sign-for-school-and-event-vector.jpg');
-  background-size: cover; 
-  background-position: center; 
-  padding: 40px;
+  background-size: cover;
+  background-position: center;
+  padding: 35px;
   height: 90vh;
   width: 95vw;
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Card with blur and transparency */
 .blur {
-  background: transparent; 
-  backdrop-filter: blur(25px); 
-  border-radius: 15px; 
-  padding: 30px; 
-  width: 600px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
-  z-index: 2; 
+  background: transparent;
+  backdrop-filter: blur(25px);
+  border-radius: 15px;
+  padding: 30px;
+  width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+.center{
+  padding: 10px;
+  padding-left: 150px;
 }
 
 .line {
@@ -26,16 +30,6 @@
   height: 1px;
   margin: 10px 0;  */
 }
-
-/* Button inside the card */
-/* .button {
-  margin-top: 10px;
-  height: 40px;
-  width: 150px;
-  border-radius: 50px;
-  border: 1px solid black;
-  cursor: pointer;
-} */
 
 /* Input fields inside the card */
 #quantity,
@@ -50,10 +44,12 @@
   color: white;
   padding-left: 15px;
 }
-#quantity{
+
+#quantity {
   width: 97%;
 }
-#level{
+
+#level {
   width: 100%;
 }
 
@@ -63,7 +59,7 @@
   border: 1px solid black;
 }
 
-.textcolor{
+.textcolor {
   color: #e6e2e2;
 }
 
@@ -76,17 +72,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-/* From Uiverse.io by adamgiebl */ 
+/* From Uiverse.io by adamgiebl */
 .cssbuttons-io-button {
   margin-top: 10px;
   background: rgb(75, 75, 75);
@@ -142,18 +128,3 @@
 .cssbuttons-io-button:active .icon {
   transform: scale(0.95);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

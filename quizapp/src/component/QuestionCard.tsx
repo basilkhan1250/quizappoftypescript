@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { questionPropType } from "../Types/Quiz_types";
+import "./QuestionCard.css"
+
 
 const QuestionCard: React.FC<questionPropType> = ({ question, option, callback }) => {
 
@@ -9,16 +11,16 @@ const QuestionCard: React.FC<questionPropType> = ({ question, option, callback }
     }
     // console.log(question, option)
     return (
-        <div>
+        <div className="blur">
             <div className="question">
-                {question}
+                <h3 className="textcolor">{question}</h3>
             </div>
             <form onSubmit={(e: React.FormEvent<EventTarget>) => callback(e, selectAns)}>
                 {
                     option.map((opt: string, index: number) => {
                         return (
                             <div key={index}>
-                                <label>
+                                <label className="textcolor">
                                     <input
                                         type="radio"
                                         name="opt"

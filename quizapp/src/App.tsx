@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { getQuizDetails } from "./services/quiz_service.ts"
 import { QuestionType } from './Types/Quiz_types.ts'
@@ -20,7 +20,7 @@ function App() {
     if (quantity && level) {
       const questions: QuestionType[] = await getQuizDetails(quantity, level);
       setQuiz(questions);
-      setQuizStart(true); // Start the quiz after fetching the questions
+      setQuizStart(true);
     } else {
       alert("Please enter both the quantity and difficulty level.");
     }
@@ -100,18 +100,32 @@ function App() {
 
   if (!quiz.length)
     return <h2 className='container'>loading.....</h2>
-
+    
   if (showResult) {
+    const percentageScore = (score / quiz.length) * 100;
+    const resultMessage = percentageScore >= 50 ? "You Win" : "You Lose!";
+    const loseGifUrl = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnVzdzlmNjVxMGxudHkyNnh3dGx6cjhvc2V4cDY5dDFnMTltZDBsbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/F3BeiZNq6VbDwyxzxF/giphy.webp"
+    const winImageUrl = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2pyejZqYTNjdHFpMDNlcnVtcDV3NnhmazE1c3l3b2trNThob2xwdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/11sBLVxNs7v6WA/giphy.webp"
     return (
-      <div className='container blur'>
-        <h3>Result</h3>
-        <p>Your Final Score is: {score} Out Of: {quiz.length}</p>
+      <div className='container '>
+        <div className='blur textcolor'>
+          <h1>Result</h1>
+          <p>Your Final Score is: {score} Out Of {quiz.length}</p>
+          <p>Your Percentage is: {percentageScore}%</p>
+          <h2>{resultMessage}</h2>
+          {percentageScore >= 50 ? (
+            <img src={winImageUrl} className='center' alt="You Win" style={{ width: '300px', marginTop: '20px' }} />
+          ) : (
+            <img src={loseGifUrl} className='center' alt="You Lose" style={{ width: '300px', marginTop: '20px' }} />
+          )}
+        </div>
       </div>
     )
   }
 
+
   return (
-    <div className='container blur'>
+    <div className='container question-card'>
       <QuestionCard
         option={quiz[currentStep].option}
         question={quiz[currentStep].question}
